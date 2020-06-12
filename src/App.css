@@ -1,38 +1,505 @@
-.App {
-  text-align: center;
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  font-family: 'PT Sans', sans-serif;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.texto-bordeado {
+  -webkit-text-stroke: 1.5px black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.enlaces {
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-general {
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  font-family: 'PT Sans', sans-serif;
+  width: 150px;
+  letter-spacing: .1rem;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  margin-top: 1rem;
+}
+
+.medicinas {
+  background: #CC3E15;
+}
+
+.alimentos {
+  background: #62CC84;
+}
+
+.vivienda {
+  background: #343E99;
+}
+
+.mascotas {
+  background: #CC8062;
+}
+
+.trabajos {
+  background: #993436;
+}
+
+.intercambios {
+  background: #a68354;
+}
+
+.general {
+  background: #3A4F8C;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.site-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #586FB3;
+  flex: 1;
+}
+
+.site-header .logo {
+  margin-left: 1rem;
+}
+
+.logo h1 {
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  font-weight: 700;
+}
+
+nav.menu ul {
+  list-style: none;
+  display: flex;
+}
+
+nav.menu ul li {
+  margin: 0 1rem;
+  font-size: 2rem;
+}
+
+nav.menu ul li a {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  font-weight: 700;
+}
+
+.contenedor-principal {
+  width: 1280px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contenedor-anuncios {
+  margin: 3rem auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.separador {
+  padding-bottom: 12rem;
+}
+
+.caja-anuncio {
+  width: 300px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 2rem;
+  box-shadow: 3px 4px 10px -4px rgba(0,0,0,0.75);
+}
+
+.contenedor-titulo {
+  background: #D7D7D7;
+  height: 120px;
+}
+
+.contenedor-titulo h2 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+  letter-spacing: .1rem;
+}
+
+.contenedor-titulo h2 a {
+  color: #505050;
+}
+
+.contenedor-detalles {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenedor-detalles h3 {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  font-weight: 400;
+}
+
+.contenedor-detalles .contenedor-categoria {
+  width: 120px;
+  height: 30px;
+  position: relative;
+}
+
+.contenedor-detalles h4 {
+  position: absolute;
+  top: -1.2rem;
+  font-size: 1.3rem;
+  left: 1.1rem;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.contenedor-detalles h4 a {
+  color: white;
+}
+
+.site-footer {
+  width: 100%;
+  background: #586FB3;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  align-items: center;
+  bottom: 0;
+  position: absolute;
+}
+
+span.titulo-sitio {
+  font-size: 3rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  font-weight: 700;
+}
+
+a.about {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: white;
+  margin-left: 5rem;
+  letter-spacing: .2rem;
+}
+
+/* Página de Registro */
+
+.contenedor-form {
+  width: 900px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.form-register {
+  padding-bottom: 10rem;
+}
+
+.form-login {
+  padding-bottom: 26rem;
+}
+
+h2.nombre-pagina {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: .5rem;
+}
+
+.login-registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 620px;
+  background: rgba(145, 140, 140, 0.5);
+  border-radius: 15px;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+.campo-form {
+  width: 400px;
+  display: flex;
+  padding: .5rem;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.campo-form label {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+  letter-spacing: .2rem;
+}
+
+.campo-form .input-form {
+  outline: none;
+  border: none;
+  border-radius: 40px;
+  height: 3.5rem;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+
+.btn-register {
+  background: #CC0F00;
+}
+
+.btn-login {
+  background: #3A4F8C;
+}
+
+.mayusculas {
+  text-transform: capitalize;
+}
+
+/* Página single */
+
+.formato-single {
+  margin: 3rem 2rem 0 2rem;
+}
+
+.contenedor-titulo-single {
+  width: 65%;
+  padding: 1rem;
+  background: #e2e2e2;
+}
+
+.contenedor-titulo-single h2 {
+  color: white;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  margin-left: 1rem;
+}
+
+.contenedor-categoria-single {
+  width: 20%;
+  height: 8rem;
+  position: relative;
+  margin-top: 5rem;
+}
+
+.contenedor-categoria-single h3 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contenedor-categoria-single h3 a {
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+.cuerpo-aviso {
+  margin-top: 3rem;
+  padding: 1.5rem;
+}
+
+.cuerpo-aviso p {
+  font-size: 1.8rem;
+  letter-spacing: .1rem;
+}
+
+.datos-autor {
+  margin: 3rem 0;
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.datos-autor span {
+  font-size: 2rem;
+}
+
+.datos-autor span.email {
+  font-weight: 700;
+}
+
+/* Página agrega aviso */
+.campo-form.campo-adicional {
+  width: 550px;
+}
+.campo-form .input-cuerpo {
+  height: 20rem;
+  border-radius: 5px;
+}
+
+/* Página actualizar aviso */
+
+.btn-update {
+  background: #CC7F0D;
+}
+
+/* Página del panel del administrador */
+
+.contenedor-tabla {
+  width: 1100px;
+}
+.padding-panel-admin {
+  padding-bottom: 15rem;
+}
+
+table.table-panel-admin {
+  max-width: 100%;
+  background: #e3e3e3;
+}
+
+tr {
+  font-size: 1.5rem;
+  letter-spacing: .2rem;
+}
+
+
+tr.heading-panel {
+  text-transform: uppercase;
+  height: 6rem;
+  background: #c4c4c4;
+}
+
+tr.heading-panel th {
+  font-weight: 400;
+  text-align: left;
+  padding: 1rem;
+}
+
+tr.data-panel {
+  height: 8rem;
+}
+
+td {
+  padding: 1.5rem;
+}
+
+td.sombreado {
+  background: #c4c4c4;
+}
+
+td.opciones-avisos {
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-boton {
+  position: relative;
+} 
+
+.btn-eliminar {
+  background: #D80505;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.contenedor-boton span {
+  position: absolute;
+  font-size: 2rem;
+  left: 1.4rem;
+  top: .8rem;
+  cursor: pointer;
+}
+
+/* User Panel */
+
+tr.heading-panel th.texto-centrado {
+  text-align: center;
+}
+
+td.pagina-user {
+  width: 250px;
+  justify-content: space-between;
+}
+
+.btn-editar {
+  background: #FEDB5D;
+  width: 140px;
+  box-shadow: 2px 2px 6px -2px rgba(0,0,0,0.5);
+}
+
+.btn-editar span {
+  left: 3.8rem;
+  text-transform: uppercase;
+}
+
+.btn-editar span a {
+  text-decoration: none;
+}
+
+/* btn salir sesión */
+
+.signout {
+  width: 120px;
+  text-transform: uppercase;
+  margin-top: -1rem;
+  display: inline-block;
+  letter-spacing: .3rem;
+  font-size: 1.5rem;
+  padding: .5rem;
+}
+
+.crear-categoria {
+  padding: 1rem;
+  width: 200px;
+  height: 30px;
+  border-radius: 40px;
+  margin: 3rem 0;
+  background: #586FB3;
+}
+
+.crear-categoria span a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+  text-transform: uppercase;
+  margin-left: .5rem;
+  letter-spacing: .2rem;
+}
+
+.errors {
+  padding: 1.5rem;
+  background: #B34944;
+  font-size: 1.7rem;
+  margin: 2rem 0;
+  border-radius: 25px;
+  color: white;
+}
+
+.multi {
+  margin: .5rem 0;
+}
+
+.cat-single {
+  color: white;
+}
+
+span.guest {
+  color: white;
+  font-size: 1.3rem;
+}
+
+.single-page {
+  text-transform: uppercase;
+  letter-spacing: .2rem;
 }
